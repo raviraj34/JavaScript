@@ -1,12 +1,23 @@
 let maintodoelem = document.querySelector(".todoelm");
 let inputs = document.getElementsByClassName("input");
 
-let localtodolist=[];
+
 
 
 const gettodoListfromLocal =()=>{
     return JSON.parse(localStorage.getItem("todoList"));
-}
+};
+
+let localtodolist = gettodoListfromLocal() || [];
+
+
+
+const addtodoDynamicElement=(element)=>{
+    const divelemnt =document.createElement("div");
+    divelemnt.classList.add("main_todo_div");
+    divelemnt.innerHTML=`<li>${element}</li> <button class="button2">delete</button>`;
+    maintodoelem.append(divelemnt);
+};
 
 const Addtodo=()=>{
     console.log("hello world");
@@ -14,7 +25,6 @@ const Addtodo=()=>{
 
     const todolistvalue = inputs[0].value.trim();
 
-    localtodolist = gettodoListfromLocal() || [];
     localtodolist.push(todolistvalue);
     localtodolist=[...new Set(localtodolist)];
     console.log(localtodolist);
@@ -25,13 +35,29 @@ const Addtodo=()=>{
 
     const divelemnt =document.createElement("div");
     divelemnt.classList.add("main_todo_div");
-    divelemnt.innerHTML=`<li>${inputs.value}</li> <button class="button2">delete</button>`
-    maintodoelem.appendChild(divelemnt);
+    divelemnt.innerHTML=`<li>${todolistvalue}</li> <button class="button2">delete</button>`;
+    maintodoelem.append(divelemnt);
 }
 
-document.querySelector(".button1").addEventListener("click", () => {
 
-    Addtodo();    
 
-})
+const showtodolist=()=>{
+    console.log(localtodolist);
+
+    localtodolist.forEach((element) => {
+    
+    addtodoDynamicElement(element);
+    });
+
+
+
+    
+};
+
+showtodolist();
+document.querySelector(".button1").addEventListener("click", (e) => {
+
+    Addtodo(e);    
+
+});
 
