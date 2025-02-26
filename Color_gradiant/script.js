@@ -61,3 +61,9 @@ document.querySelector(".button1").addEventListener("click", (e) => {
 
 });
 
+
+const time = new Date();
+console.log(time);
+
+
+//javascript get method and funtion
