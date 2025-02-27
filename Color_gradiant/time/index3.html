@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Stopwatch</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e; 
+    color: #ffffff; 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.stopwatch-container {
+    text-align: center;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    font-size: 60px; 
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #ffffff; 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); }
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #ffffff; 
+    color: #1e1e1e; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f0f0f0; 
+}
+    </style>
+</head>
+<body>
+    <section>
+    <div class="stopwatch-container">
+        <div class="display" id="display">00</div>
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+            <button id="resetBtn">Reset</button>
+            <button id="getTimeBtn">Get Time</button>
+            <button id="clearTimeBtn">Clear Time</button>
+        </div>
+
+    </div>
+    <div class="resetvalue"></div>
+</section>
+    <script>
+
+        const count = document.getElementById("display");
+        const resetBtn = document.getElementById("resetvalue");
+        let seconds = 0;
+        let intervalid;
+
+        const startTimer = () => {
+            intervalid = setInterval(() => {
+                seconds++;
+                count.innerText = seconds;
+            }, 1000);
+
+        };
+
+        const stopTimer = () => {
+            clearInterval(intervalid);
+        };
+
+        const resetTimer = () => {
+            clearInterval(intervalid);
+            seconds = 0;
+            count.innerText = seconds;
+        };
+
+
+         document
+         .getElementById("startBtn")
+         .addEventListener("click", startTimer);
+
+         document
+         .getElementById("stopBtn")
+         .addEventListener("click", stopTimer);
+
+         document
+         .getElementById("resetBtn")
+         .addEventListener("click", resetTimer);
+
+         document
+        .getElementById("getTimeBtn")
+         .addEventListener("click", getTime);
+
+        // document
+        // .getElementById("clearTimeBtn")
+        // .addEventListener("click", clearTime);
+        
+    </script>
+</body>
+</html>

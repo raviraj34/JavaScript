@@ -67,3 +67,13 @@ console.log(time);
 
 
 //javascript get method and funtion
+
+const date = new Date();
+const localtime = date.toLocaleTimeString();
+console.log(localtime);
+
+//set time out
+setTimeout(() => {
+    console.log("this is the working if the set time out function ");
+    
+}, 5000);
