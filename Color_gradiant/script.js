@@ -77,3 +77,13 @@ setTimeout(() => {
     console.log("this is the working if the set time out function ");
     
 }, 5000);
+
+//object.assign method 
+
+const first = {a:2 ,b:3};
+const secand = {a:5 ,b:4};
+const merge = Object.assign({},first,secand);
+console.log(merge);
+
+
+
