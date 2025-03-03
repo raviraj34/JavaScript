@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preodic table</title>
+
+</head>
+
+<body>
+    <style>
+        .main{
+            display: flex;
+            gap: 10px;
+            margin-top: 40px;
+        }
+    </style>
+
+    <section class="main"></section>
+</body>
+    <script>
+        function preodicTable() {
+            const mainbody = document.querySelector(".main");
+
+            for (let i = 0; i <= 50; i++) {
+                const element = document.createElement("div");
+                element.innerText = i;
+                mainbody.append(element);
+
+            }
+
+            mainbody.addEventListener("click", (e) => {
+                alert(e.target.innerText);
+
+
+            });
+
+        }
+
+        preodicTable();
+
+
+    </script>
+
+</html>
