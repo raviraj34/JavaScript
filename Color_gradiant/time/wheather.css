@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+.main{
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin:65px auto;
+}
+
+body{
+    background-color: rgb(24, 19, 19);
+}
+
+
+.wh_search{
+  position: relative;
+  width: 41%;
+    border: none;
+    background: rgb(44, 37, 37);
+    color: rgb(20, 18, 18);
+    outline: none;
+    border-radius: 5px;
+    padding: 3px;
+
+}
+
+.search_input{
+    position: relative;
+    background-color: rgb(44, 37, 37);
+}
+
+.img{
+    position: relative;
+}
+
+.body{
+    width: 34%;
+    height: 99px;
+}
+
+.info{
+    display: flex;
+    gap: 20px;
+  
+
+}
+.card1{
+    border: 1px solid black;
+    width: 40%;
+    
+}
+.card2{
+    border: 1px solid black;
+    width: 40%;
+}
+.card3{
+    border: 1px solid black;
+    width: 40%;
+    
+}
+.card4{
+    border: 1px solid black;
+    
+}
