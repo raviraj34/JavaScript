@@ -7,7 +7,7 @@
 
 
 .main{
-    width: 40%;
+    width: 47%;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -21,12 +21,12 @@ body{
 
 .wh_search{
   position: relative;
-  width: 41%;
+  width: 36%;
     border: none;
     background: rgb(44, 37, 37);
     color: rgb(20, 18, 18);
     outline: none;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 3px;
 
 }
@@ -34,10 +34,14 @@ body{
 .search_input{
     position: relative;
     background-color: rgb(44, 37, 37);
+    border: none;
+    outline: none;
 }
 
 .img{
     position: relative;
+    height: 17px;
+    padding-top: 2px;
 }
 
 .body{
@@ -48,8 +52,9 @@ body{
 .info{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
   
-
 }
 .card1{
     border: 1px solid black;
@@ -67,5 +72,5 @@ body{
 }
 .card4{
     border: 1px solid black;
-    
+    width: 40%;
 }

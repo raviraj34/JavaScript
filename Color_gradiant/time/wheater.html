@@ -18,7 +18,7 @@
         <div class="header">
             <form class="wh_search">
                 <img class="img" src="search.svg" alt="">
-                <input type="text" class="search_input" placeholder="enter the city name">
+                <input type="text" class="search_input" placeholder="Search your city...">
 
             </form>
         </div>
@@ -50,19 +50,19 @@
             </div>
             <div class="card2">
                 <div>
-                    <p>Feels Like</p>
+                    <p>Humidity</p>
                     <p class="feels">15&#176</p>
                 </div>
             </div>
             <div class="card3">
                 <div>
-                    <p>Feels Like</p>
+                    <p>Pressure</p>
                     <p class="feels">15&#176</p>
                 </div>
             </div>
             <div class="card4">
                 <div>
-                    <p>Feels Like</p>
+                    <p>Wind</p>
                     <p class="feels">15&#176</p>
                 </div>
             </div>
@@ -72,6 +72,30 @@
 
 
     </section>
+
+    <script>
+
+        let cityname = document.querySelector(".city");
+        let date = document.querySelector(".date");
+        let fronstcast = document.querySelector(".fronstcast");
+        let temprature = document.querySelector(".temprature");
+        let wh_max = document.querySelector(".wh_max");
+        let wh_min = document.querySelector(".wh_min");
+        let feels = document.querySelector(".feels");
+        let pressure = document.querySelector(".pressure");
+        let wind = document.querySelector(".wind");
+
+
+
+        const wheatherdata = async (city) => {
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city};
+            &appid=3a4d3c5a8b3b9d3b4d3c5a8b3b9d3b4d3&units=metric`;
+
+            const res = await fetch(weatherUrl);
+            const data = await res.json();
+            console.log(data);
+        }
+    </script>
 
 </body>
 
